@@ -3,3 +3,19 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.pet-btn {
+	@apply shadow-md py-3 px-6 rounded-md transition duration-300;
+}
+
+.pet-btn-blue {
+	@apply bg-pet-blue text-white;
+}
+
+.pet-btn-indigo {
+	@apply bg-pet-indigo text-white;
+}
+
+.pet-btn-red {
+	@apply bg-pet-red text-white;
+}
