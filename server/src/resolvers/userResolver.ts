@@ -71,12 +71,16 @@ export class UserResolver {
 	): Promise<LoginResponse> {
 		const user = await User.findOne({ where: { email: email } });
 		if (!user) {
-			throw new Error('User not found');
+			return {
+				accessToken: '',
+			};
 		}
 		const valid = await compare(password, user.password);
 
 		if (!valid) {
-			throw new Error('wrong password');
+			return {
+				accessToken: '',
+			};
 		}
 
 		//login successful
