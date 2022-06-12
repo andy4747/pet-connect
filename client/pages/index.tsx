@@ -1,20 +1,9 @@
-import { gql, useQuery } from '@apollo/client';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import { Home as PublicHome } from '../components/Home';
-import { Loading } from '../components/Loading';
+import { Home as PublicHome } from '../components/home/Home';
+import { authenticated } from '../HOC/authenticated';
 
 const Home: NextPage = () => {
-	const { data, loading, error } = useQuery(gql`
-		{
-			run
-		}
-	`);
-
-	if (loading) {
-		return <Loading />;
-	}
-
 	return (
 		<div className='font-Poppins'>
 			<Head>
@@ -23,10 +12,17 @@ const Home: NextPage = () => {
 				<meta charSet='UTF-8' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			{console.log(data)}
 			<PublicHome />
 		</div>
 	);
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = authenticated(
+	async (_ctx) => {
+		return {
+			props: {},
+		};
+	}
+);

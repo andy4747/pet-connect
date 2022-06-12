@@ -2,9 +2,10 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import type { AppProps } from 'next/app';
 import '../styles/index.css';
 
-const apolloClient = new ApolloClient({
+export const apolloClient = new ApolloClient({
 	uri: 'http://localhost:5000/graphql',
 	cache: new InMemoryCache(),
+	credentials: 'include',
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,3 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
+
+// sm:
+// md:
+// lg:

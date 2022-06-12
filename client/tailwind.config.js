@@ -1,5 +1,8 @@
 module.exports = {
-	purge: ['./pages/**/*.{js,jsx,ts,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+	content: [
+		'./pages/**/*.{js,jsx,ts,tsx}',
+		'./components/**/*.{js,ts,jsx,tsx}',
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -13,7 +16,6 @@ module.exports = {
 				'pet-light-grey': '#E5E7EB',
 				white: '#ffffff',
 				black: '#38424D',
-				gray: '#FBFBFF',
 				yellow: '#FDD446',
 				'theme-color': '#F94F4F',
 				'border-color': '#E8E8E8',
@@ -26,7 +28,7 @@ module.exports = {
 			sm: '640px',
 			// => @media (min-width: 640px) { ... }
 
-			md: '640px',
+			md: '768px',
 			// => @media (min-width: 768px) { ... }
 
 			lg: '1024px',
